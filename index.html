@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday, Dad! 🎂</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <canvas id="confetti"></canvas>
+
+  <!-- Tap overlay (only if browser blocks autoplay) -->
+  <div class="start-overlay hidden" id="startOverlay">
+    <div class="overlay-card">
+      <p class="overlay-emoji">🎂🎈🎉</p>
+      <h2>Happy Birthday, Dad!</h2>
+      <p>Tap anywhere to start the celebration<br />and the birthday song 🎵</p>
+    </div>
+  </div>
+
+  <div class="balloons" aria-hidden="true">
+    <div class="balloon b1"></div>
+    <div class="balloon b2"></div>
+    <div class="balloon b3"></div>
+    <div class="balloon b4"></div>
+    <div class="balloon b5"></div>
+    <div class="balloon b6"></div>
+  </div>
+
+  <div class="bunting" aria-hidden="true">
+    <span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span>
+  </div>
+
+  <!-- <button class="music-btn playing" id="musicBtn" aria-label="Toggle birthday song">
+    <span class="music-icon">🎵</span>
+    <span class="music-label">Song On</span>
+  </button> -->
+
+  <header class="hero">
+    <div class="sparkles" aria-hidden="true">
+      <span>✨</span><span>⭐</span><span>✨</span><span>🌟</span><span>✨</span>
+    </div>
+
+    <!-- Cute people in hero -->
+    <div class="cute-person person-a dancing" aria-hidden="true">
+      <div class="person-balloon"></div>
+      <div class="person-body">
+        <div class="person-head">
+          <div class="party-hat"></div>
+          <div class="eye left"></div>
+          <div class="eye right"></div>
+          <div class="cheek left"></div>
+          <div class="cheek cheek-right"></div>
+          <div class="mouth"></div>
+        </div>
+        <div class="person-torso"></div>
+        <div class="arm arm-left"></div>
+        <div class="arm arm-right"></div>
+        <div class="legs"><div class="leg"></div><div class="leg"></div></div>
+      </div>
+      <p class="person-speech">Love you, Dad! 💕</p>
+    </div>
+
+    <div class="cute-person person-b dancing" aria-hidden="true">
+      <div class="person-prop heart-prop">❤️</div>
+      <div class="person-body">
+        <div class="person-head">
+          <div class="party-hat"></div>
+          <div class="eye left"></div>
+          <div class="eye right"></div>
+          <div class="cheek left"></div>
+          <div class="cheek cheek-right"></div>
+          <div class="mouth smile-wide"></div>
+        </div>
+        <div class="person-torso"></div>
+        <div class="arm arm-left"></div>
+        <div class="arm arm-right arm-hold"></div>
+        <div class="legs"><div class="leg"></div><div class="leg"></div></div>
+      </div>
+      <p class="person-speech">Best Dad ever!</p>
+    </div>
+
+    <div class="hero-content">
+      <p class="hero-label">🎈 September 21, 2026 🎈</p>
+
+      <div class="hero-scene">
+        <div class="cake-wrapper">
+          <div class="cake">
+            <div class="candles">
+              <div class="candle"><div class="flame"></div></div>
+              <div class="candle"><div class="flame"></div></div>
+              <div class="candle"><div class="flame"></div></div>
+            </div>
+            <div class="frosting"></div>
+            <div class="cake-layer layer-top">
+              <div class="sprinkle s1"></div>
+              <div class="sprinkle s2"></div>
+              <div class="sprinkle s3"></div>
+              <div class="sprinkle s4"></div>
+              <div class="sprinkle s5"></div>
+              <div class="sprinkle s6"></div>
+            </div>
+            <div class="cake-layer layer-mid"></div>
+            <div class="cake-layer layer-bottom"></div>
+            <div class="cake-plate"></div>
+          </div>
+        </div>
+      </div>
+
+      <h1>Happy Birthday,<br /><span class="name">Dad</span> 🎉</h1>
+      <p class="hero-subtitle">I made this little surprise just for you — because no one deserves a happier birthday than you.</p>
+      <button class="scroll-btn" aria-label="Scroll to wishes">↓</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="wishes" id="wishes">
+      <div class="cute-person person-c person-small dancing" aria-hidden="true">
+        <div class="person-body">
+          <div class="person-head">
+            <div class="party-hat"></div>
+            <div class="eye left"></div>
+            <div class="eye right"></div>
+            <div class="cheek left"></div>
+            <div class="cheek cheek-right"></div>
+            <div class="mouth"></div>
+          </div>
+          <div class="person-torso"></div>
+          <div class="arm arm-left"></div>
+          <div class="arm arm-right"></div>
+          <div class="legs"><div class="leg"></div><div class="leg"></div></div>
+        </div>
+        <p class="person-speech">Read this, Dad! 📖</p>
+      </div>
+
+      <h2>💌 A Letter For You, Dad 💌</h2>
+      <div class="wish-card card-pink">
+        <p>
+         Happy Birthday to my wonderful husband! ❤️ Wishing you endless happiness, 
+         good health, and success. I’m so grateful to have you in my life. 
+         Love you always! 🎂❤️
+        </p>
+          <p class="signature">— Your Wife, with all my heart ❤️</p>
+      </div>
+      <div class="wish-card card-blue">
+        <p>
+          Happy Birthday, Dad! ❤️ Wishing you lots of happiness, 
+          good health, and success. Thank you for always being there for me. 
+          Love you, Dad! 🎂❤️
+
+        </p>
+         <p class="signature">— Your Son, with all my heart ❤️</p>
+      </div>
+      <div class="wish-card highlight">
+        <p>
+          On your birthday, I just want you to rest, smile, and feel how loved you are.
+          Thank you for being my Dad — my hero, my safe place, and my favorite person.
+          I hope this year gives you back all the joy you've given us.
+        </p>
+        <p class="signature">— Your Daughter, with all my heart ❤️</p>
+      </div>
+    </section>
+
+    <section class="reasons">
+      <h2>🏆 Things I Love About You 🏆</h2>
+      <ul class="reasons-grid">
+        <li class="reason-card rc1">
+          <span class="reason-icon">🌟</span>
+          <h3>The Way You Guide Me</h3>
+          <p>You never lecture — you just quietly show me the right way. That's rare, Dad.</p>
+        </li>
+        <li class="reason-card rc2">
+          <span class="reason-icon">💪</span>
+          <h3>How Strong You Are</h3>
+          <p>You carry so much for all of us and still find energy to make us laugh.</p>
+        </li>
+        <li class="reason-card rc3">
+          <span class="reason-icon">😄</span>
+          <h3>Your Silly Side</h3>
+          <p>Your jokes may be terrible, but they're OUR terrible jokes — and I love them.</p>
+        </li>
+        <li class="reason-card rc4">
+          <span class="reason-icon">❤️</span>
+          <h3>Your Warm Heart</h3>
+          <p>You love us without conditions. That's the greatest gift a Dad can give.</p>
+        </li>
+      </ul>
+    </section>
+
+    <section class="cake-section">
+      <div class="cute-person person-d dancing" aria-hidden="true">
+        <div class="person-prop gift-prop">🎁</div>
+        <div class="person-body">
+          <div class="person-head">
+            <div class="party-hat"></div>
+            <div class="eye left"></div>
+            <div class="eye right"></div>
+            <div class="cheek left"></div>
+            <div class="cheek cheek-right"></div>
+            <div class="mouth"></div>
+          </div>
+          <div class="person-torso"></div>
+          <div class="arm arm-left"></div>
+          <div class="arm arm-right arm-hold"></div>
+          <div class="legs"><div class="leg"></div><div class="leg"></div></div>
+        </div>
+        <p class="person-speech">Make a wish! ✨</p>
+      </div>
+
+      <h2>🎂 Make a Wish, Dad! 🎂</h2>
+      <p class="cake-message">Close your eyes, think of something you really want — then blow out the candles!</p>
+      <div class="cake-wrapper big-cake">
+        <div class="cake">
+          <div class="candles">
+            <div class="candle"><div class="flame"></div></div>
+            <div class="candle"><div class="flame"></div></div>
+            <div class="candle"><div class="flame"></div></div>
+            <div class="candle"><div class="flame"></div></div>
+            <div class="candle"><div class="flame"></div></div>
+          </div>
+          <div class="frosting"></div>
+          <div class="cake-layer layer-top">
+            <div class="sprinkle s1"></div>
+            <div class="sprinkle s2"></div>
+            <div class="sprinkle s3"></div>
+            <div class="sprinkle s4"></div>
+            <div class="sprinkle s5"></div>
+            <div class="sprinkle s6"></div>
+            <div class="sprinkle s7"></div>
+            <div class="sprinkle s8"></div>
+          </div>
+          <div class="cake-layer layer-mid"></div>
+          <div class="cake-layer layer-bottom"></div>
+          <div class="cake-plate"></div>
+        </div>
+      </div>
+      <button class="blow-btn" id="blowBtn">🕯️ Blow Out the Candles</button>
+    </section>
+
+    <section class="memories">
+      <h2>📸 Our Favorite Moments 📸</h2>
+      <p class="memories-intro">These are the memories I hold closest — add your photos here to make it even more special.</p>
+      <div class="memory-grid">
+        <figure class="memory-card mc1">
+          <div class="memory-photo placeholder">
+             <img src ="https://i.pinimg.com/1200x/8f/ae/45/8fae45f9af6e50a71cdd2693e45205ba.jpg"/>
+          </div>
+          <figcaption>That day out together — I'll never forget it</figcaption>
+        </figure>
+        <figure class="memory-card mc2">
+          <div class="memory-photo placeholder">
+            <img src ="https://i.pinimg.com/1200x/69/51/f5/6951f52bba4e55e04a230d90a04b3b41.jpg"/>
+          </div>
+          <figcaption>When you made the whole room laugh</figcaption>
+        </figure>
+        <figure class="memory-card mc3">
+          <div class="memory-photo placeholder">
+            <img src ="a101f3dadd40ab881b6e3ec1e3a83e46.jpg"/>
+          </div>
+          <figcaption>A ordinary day that felt perfect because you were there</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="final-wish">
+      <div class="cute-people-row" aria-hidden="true">
+        <div class="cute-person person-e person-tiny dancing">
+          <div class="person-body">
+            <div class="person-head">
+              <div class="party-hat"></div>
+              <div class="eye left"></div>
+              <div class="eye right"></div>
+              <div class="mouth"></div>
+            </div>
+            <div class="person-torso"></div>
+            <div class="legs"><div class="leg"></div><div class="leg"></div></div>
+          </div>
+        </div>
+        <div class="cute-person person-f person-tiny dancing">
+          <div class="person-body">
+            <div class="person-head">
+              <div class="party-hat"></div>
+              <div class="eye left"></div>
+              <div class="eye right"></div>
+              <div class="mouth smile-wide"></div>
+            </div>
+            <div class="person-torso"></div>
+            <div class="legs"><div class="leg"></div><div class="leg"></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="party-icons" aria-hidden="true">🎊 🎁 🎈 🥳 🎵 🎀</div>
+      <h2>Happy Birthday, Dad! 🎉</h2>
+      <p>Thank you for every hug, every word of advice, and every sacrifice I probably didn't even see. I love you so much.</p>
+      <button class="celebrate-btn" id="celebrateBtn">More Confetti! 🎊</button>
+    </section>
+  </main>
+
+  <footer>
+    <p>🎂 Made with love by Tharushi · September 16, 2026 🎂</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
